@@ -14,7 +14,8 @@ module ram import soc_pkg::*; (
     end
   end
 
-  logic [31:0] word_addr;
+  // Explicitly match bit widths to resolve WIDTHEXPAND
+  logic [15:0] word_addr;
   assign word_addr = addr_i[17:2];
 
   always_ff @(posedge clk_i) begin
