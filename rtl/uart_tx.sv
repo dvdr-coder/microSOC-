@@ -5,8 +5,6 @@ module uart_tx (
   input  logic        we_i,
   output logic        tx_o
 );
-  initial tx_o = 1'b1;
-
   logic [9:0] shift_reg;
   logic [3:0] bit_cnt;
 
