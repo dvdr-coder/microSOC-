@@ -4,7 +4,11 @@ OBJCOPY        = $(CROSS_COMPILE)objcopy
 
 VERILATOR = verilator
 VFLAGS    = --timing --trace --cc --exe --build -j 0 \
-            -Irtl -Itb tb/uvm_lite_pkg.sv tb/tb_top.sv tb/verilator_main.cpp \
+            -Irtl -Itb \
+            rtl/soc_pkg.sv \
+            tb/uvm_lite_pkg.sv \
+            tb/tb_top.sv \
+            tb/verilator_main.cpp \
             --top-module tb_top
 
 all: firmware.hex sim
