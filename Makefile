@@ -2,14 +2,14 @@ CROSS_COMPILE ?= riscv64-unknown-elf-
 CC             = $(CROSS_COMPILE)gcc
 OBJCOPY        = $(CROSS_COMPILE)objcopy
 
-VERILATOR = verilator
-VFLAGS    = --timing --trace -Wno-WIDTHEXPAND --cc --exe --build -j 0 \
-            -Irtl -Itb \
-            rtl/soc_pkg.sv \
-            tb/uvm_lite_pkg.sv \
-            tb/tb_top.sv \
-            tb/verilator_main.cpp \
-            --top-module tb_top
+VERILATOR      = verilator
+VFLAGS         = --timing --trace -Wno-WIDTHEXPAND -Wno-WIDTHTRUNC --cc --exe --build -j 0 \
+                 -Irtl -Itb \
+                 rtl/soc_pkg.sv \
+                 tb/uvm_lite_pkg.sv \
+                 tb/tb_top.sv \
+                 tb/verilator_main.cpp \
+                 --top-module tb_top
 
 all: firmware.hex sim
 
