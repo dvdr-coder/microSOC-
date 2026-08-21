@@ -16,4 +16,3 @@ int main() {
     *FINISH_BASE = 0x1;
     return 0;
 }
-
