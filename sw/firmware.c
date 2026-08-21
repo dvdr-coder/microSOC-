@@ -2,12 +2,12 @@
 #define UART_BASE   ((volatile unsigned int*)0x20000000)
 #define FINISH_BASE ((volatile unsigned int*)0x30000000)
 
-void putchar(char c) {
+void uart_putchar(char c) {
     *UART_BASE = (unsigned int)c;
 }
 
 void print(const char *s) {
-    while (*s) putchar(*s++);
+    while (*s) uart_putchar(*s++);
 }
 
 int main() {
@@ -16,3 +16,4 @@ int main() {
     *FINISH_BASE = 0x1;
     return 0;
 }
+
