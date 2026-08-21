@@ -3,7 +3,7 @@ CC             = $(CROSS_COMPILE)gcc
 OBJCOPY        = $(CROSS_COMPILE)objcopy
 
 VERILATOR = verilator
-VFLAGS    = --timing --trace --cc --exe --build -j 0 \
+VFLAGS    = --timing --trace -Wno-WIDTHEXPAND --cc --exe --build -j 0 \
             -Irtl -Itb \
             rtl/soc_pkg.sv \
             tb/uvm_lite_pkg.sv \
