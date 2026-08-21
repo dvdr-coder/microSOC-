@@ -1,1 +1,21 @@
 test verilator and many here
+
+
+microsoc/
+├── rtl/
+│   ├── soc_pkg.sv
+│   ├── rv32i_core.sv
+│   ├── ram.sv
+│   ├── gpio.sv
+│   ├── uart_tx.sv
+│   └── soc_top.sv
+├── tb/
+│   ├── soc_if.sv
+│   ├── uvm_lite_pkg.sv
+│   ├── tb_top.sv
+│   └── verilator_main.cpp
+├── sw/
+│   ├── link.ld
+│   ├── start.S
+│   └── firmware.c
+└── Makefile
