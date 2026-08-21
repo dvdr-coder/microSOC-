@@ -14,9 +14,9 @@ module ram import soc_pkg::*; (
     end
   end
 
-  // Explicitly match bit widths to resolve WIDTHEXPAND
-  logic [15:0] word_addr;
-  assign word_addr = addr_i[17:2];
+  // Exactly 14 bits for 16,384 words (64 KB total)
+  logic [13:0] word_addr;
+  assign word_addr = addr_i[15:2];
 
   always_ff @(posedge clk_i) begin
     if (we_i) mem[word_addr] <= wdata_i;
